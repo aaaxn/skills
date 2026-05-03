@@ -32,5 +32,6 @@ Verify a PR is safe, merge it, and clean up.
 
 - Never merge if CI is red or tests fail locally.
 - Never `--force`, `--no-verify`, or `reset --hard`.
+- Never add "🤖 Generated with Claude Code" to PR descriptions or commit messages.
 - Always checkout `main` and pull after merge before deleting branches.
 - If anything looks wrong during final review, stop and report instead of merging.

@@ -32,4 +32,5 @@ After changes are made, package them into a PR and verify quality.
 
 - Never `--force`, `--no-verify`, or `reset --hard`.
 - Never commit `.env`, credentials, or secrets.
+- Never add "🤖 Generated with Claude Code" to PR descriptions or commit messages.
 - If tests fail or review finds issues, stop and report — do not push forward.
