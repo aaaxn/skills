@@ -1,6 +1,6 @@
 ---
 name: slurm
-description: Use when launching jobs on the SONIC SLURM cluster via phocus4, when using gorgona/medusa nodes, when handling sinfo/squeue/sbatch, when staging datasets across /tmp, /snfs2, or /sonic_home, when dealing with CUDA cu124/cu128/cu130 version mismatches on GPU partitions, or when DataLoader timeouts, split overlap errors, PYTHONPATH issues, or uv venv recreation break SLURM training runs
+description: Core reference for the SONIC SLURM cluster via phocus4 — architecture facts, filesystem tiers, venv strategy, launch patterns, dataset staging, and error catalog. Use as the foundational knowledge skill; for specific workflows use slurm-status (availability check), slurm-job (script creation), or slurm-debug (failure diagnosis).
 ---
 
 # SONIC SLURM Cluster
