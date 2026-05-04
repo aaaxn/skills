@@ -9,18 +9,22 @@ Verify a PR is safe, merge it, and clean up.
 
 ## Flow
 
-1. **Verify PR status** — Check CI checks and review status on GitHub (`gh pr checks`, `gh pr view`). If checks are failing or reviews are pending, stop and report.
+1. **Verify PR + Run tests + Final review (parallel)** — Dispatch three subagents simultaneously via the Agent tool:
 
-2. **Run tests locally** — Identify relevant tests from the changed files and run them. If anything fails, stop and report — do NOT merge.
+   **Agent A — CI status checker:** Check CI checks and review status on GitHub (`gh pr checks`, `gh pr view`). Report whether checks pass and reviews are approved.
 
-3. **Final review** — Review the PR diff one last time (`gh pr diff`). Look for anything missed: debug code, secrets, logic errors, unintended changes.
+   **Agent B — Local test runner:** Identify relevant tests from the changed files and run them. Report pass/fail results and any failure output.
 
-4. **Merge** — If all clear, merge with a regular merge commit into `main`:
+   **Agent C — Diff reviewer:** Review the PR diff (`gh pr diff`). Look for anything missed: debug code, secrets, logic errors, unintended changes.
+
+   Wait for all three agents to complete. If ANY agent reports failures or issues, stop and report — do NOT proceed to merge.
+
+2. **Merge** — If all agents report clean, merge with a regular merge commit into `main`:
    ```
    gh pr merge --merge
    ```
 
-5. **Cleanup** — After successful merge:
+3. **Cleanup** — After successful merge:
    ```
    git checkout main
    git pull
