@@ -1,6 +1,6 @@
 ---
 name: deslop
-description: Remove AI-generated code slop and clean up code style
+description: Use when the user says "deslop", "remove slop", or wants AI-generated noise cleaned from the branch diff — strips unnecessary comments, defensive bloat, `any` casts, and style inconsistent with the surrounding codebase.
 ---
 
 # Remove AI code slop
