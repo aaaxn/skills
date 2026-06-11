@@ -1,10 +1,5 @@
 # skills
 
-My personal Claude Code skills. Skills sourced from other repos
-(e.g. [mattpocock/skills](https://github.com/mattpocock/skills)) are not
-vendored here — they're installed directly from their official repos into
-`~/.agents/skills` and tracked by `.skill-lock.json`.
-
 ## Skills
 
 | Skill | Purpose |
