@@ -1,35 +1,57 @@
 ---
 name: merge
-description: Use when a PR is approved and ready to merge — verifies CI and tests, reviews the diff one final time, merges into main, and cleans up local and remote feature branches.
+description: Use when a PR is approved and ready to merge — verifies CI and tests, reviews the diff one final time, merges into the default branch, and cleans up local and remote feature branches.
 ---
 
 # Merge
 
-Verify a PR is safe, merge it, and clean up.
+Verify a PR is safe, merge it, and clean up. Be frugal with subagents: the CI
+check runs inline, and the two subagents below are the only ones this skill
+spawns — do not add more.
+
+## Preconditions
+
+- Detect the default branch (don't assume `main`):
+  `gh repo view --json defaultBranchRef -q .defaultBranchRef.name`. Use it everywhere `<default>` appears below.
+- Confirm which PR is in play (`gh pr view --json number,headRefName`). Capture the feature branch name for cleanup.
 
 ## Flow
 
-1. **Verify PR + Run tests + Final review (parallel)** — Dispatch three subagents simultaneously via the Agent tool:
+1. **Gate on CI (inline, no subagent)** — Run `gh pr checks` and
+   `gh pr view --json reviewDecision,mergeable` yourself. If any check is
+   failing or the PR isn't approved/mergeable, **stop and report — do NOT
+   merge and do NOT spawn the verification agents.**
 
-   **Agent A — CI status checker:** Check CI checks and review status on GitHub (`gh pr checks`, `gh pr view`). Report whether checks pass and reviews are approved.
+2. **Verify (two parallel subagents)** — Only if CI is green, dispatch both
+   in a single message via the Agent tool:
 
-   **Agent B — Local test runner:** Identify relevant tests from the changed files and run them. Report pass/fail results and any failure output.
+   **Agent A — Local test runner** (`model: haiku`): Identify relevant tests
+   from the changed files (`gh pr diff --name-only`) and run them. Instruct it
+   to reply with only a verdict line (`PASS` or `FAIL`), and on failure the
+   failing test names plus the key error lines (≤20 lines) — never the full
+   test log.
 
-   **Agent C — Diff reviewer:** Review the PR diff (`gh pr diff`). Look for anything missed: debug code, secrets, logic errors, unintended changes.
+   **Agent B — Diff reviewer** (`model: opus`): Review the PR diff
+   (`gh pr diff`). Look for anything missed: debug code, secrets, logic
+   errors, unintended changes. Instruct it to reply with only `CLEAN` or a
+   short list of concrete issues with file:line — no diff quoting beyond the
+   offending lines.
 
-   Wait for all three agents to complete. If ANY agent reports failures or issues, stop and report — do NOT proceed to merge.
+   Wait for both. **If either reports a failure or issue, stop and report —
+   do NOT merge.**
 
-2. **Merge** — If all agents report clean, merge with a regular merge commit into `main`:
+3. **Merge** — If all clean, merge into `<default>`:
    ```
-   gh pr merge --merge
+   gh pr merge --merge --delete-branch
    ```
+   (`--delete-branch` removes the remote branch automatically.)
 
-3. **Cleanup** — After successful merge:
+4. **Cleanup** — After a successful merge:
    ```
-   git checkout main
+   git checkout <default>
    git pull
    git branch -d <feature-branch>
-   git push origin --delete <feature-branch>
+   git fetch --prune
    ```
 
 ## Rules
@@ -37,5 +59,5 @@ Verify a PR is safe, merge it, and clean up.
 - Never merge if CI is red or tests fail locally.
 - Never `--force`, `--no-verify`, or `reset --hard`.
 - Never add "🤖 Generated with Claude Code" to PR descriptions or commit messages.
-- Always checkout `main` and pull after merge before deleting branches.
+- Always checkout `<default>` and pull after merge before deleting the local branch.
 - If anything looks wrong during final review, stop and report instead of merging.
