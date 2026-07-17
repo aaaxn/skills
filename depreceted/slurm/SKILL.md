@@ -1,6 +1,7 @@
 ---
 name: slurm
 description: Core reference for the SONIC SLURM cluster via phocus4 — architecture facts, filesystem tiers, venv strategy, launch patterns, dataset staging, and error catalog. Use as the foundational knowledge skill; for specific workflows use slurm-status (availability check), slurm-job (script creation), or slurm-debug (failure diagnosis).
+disable-model-invocation: true
 ---
 
 # SONIC SLURM Cluster

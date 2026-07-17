@@ -1,6 +1,7 @@
 ---
 name: slurm-job
 description: Create or modify sbatch scripts for the SONIC SLURM cluster. Handles partition selection, CUDA/venv setup, dataset staging, and proper resource allocation for gorgonas (RTX 3090 Ti) and medusas (RTX 5090 Blackwell) nodes.
+disable-model-invocation: true
 ---
 
 # SONIC SLURM Job Script Builder

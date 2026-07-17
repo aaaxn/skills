@@ -1,6 +1,7 @@
 ---
 name: slurm-status
 description: Quick SONIC SLURM cluster status check — shows GPU availability, running jobs, node states, and recommends where to submit next. Use before any job submission.
+disable-model-invocation: true
 ---
 
 # SONIC Cluster Status Check

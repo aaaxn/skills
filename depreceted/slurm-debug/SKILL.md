@@ -1,6 +1,7 @@
 ---
 name: slurm-debug
 description: Diagnose failed, killed, timed-out, or stuck SLURM jobs on the SONIC cluster. Covers OOM, CUDA errors, DataLoader timeouts, venv corruption, driver mismatches, and pending-forever jobs.
+disable-model-invocation: true
 ---
 
 # SONIC SLURM Job Debugger

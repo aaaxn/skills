@@ -1,23 +1,40 @@
 # skills
 
-## Skills
+Personal agent skills. Skill directories stay at the repository root so the
+available commands are visible without navigating through category folders.
 
-| Skill | Purpose |
+## Included skills
+
+| Skill | Purpose | Source |
+| --- | --- | --- |
+| [`deslop`](./deslop/) | Remove AI-generated noise from a branch diff | Maintained in this repository |
+| [`bro`](./bro/) | Restate the previous response in plain language | [`dmmulroy/skills`](https://github.com/dmmulroy/skills) |
+| [`ty`](./ty/) | Reference for the ty Python type checker | Maintained here using the [official ty documentation](https://docs.astral.sh/ty/) |
+| [`uv`](./uv/) | Reference for the uv Python package manager | Maintained here using the [official uv documentation](https://docs.astral.sh/uv/) |
+
+## Deprecated
+
+The old SONIC SLURM skills remain under [`depreceted/`](./depreceted/) for
+historical reference.
+
+## Other installed skills
+
+These skills are installed from their upstream repositories and are not
+vendored here.
+
+| Skills | Upstream |
 | --- | --- |
-| `merge` | Verify CI/tests/diff, merge an approved PR, clean up branches |
-| `ship` | Verify diff and tests, then branch, commit, push, and open a PR |
-| `deslop` | Remove AI-generated noise from the branch diff |
-| `ruff` | Reference for ruff (Python linter/formatter) |
-| `ty` | Reference for ty (Python type checker) |
-| `uv` | Reference for uv (Python package/project manager) |
-| `slurm` | Core reference for the SONIC SLURM cluster |
-| `slurm-status` | Cluster GPU availability check |
-| `slurm-job` | SLURM job script creation |
-| `slurm-debug` | SLURM job failure diagnosis |
+| Matt Pocock engineering and productivity skills | [`mattpocock/skills`](https://github.com/mattpocock/skills) |
+| `thermos`, `thermo-nuclear-review`, `thermo-nuclear-code-quality-review` | [`cursor/plugins`](https://github.com/cursor/plugins/tree/main/thermos) |
+| `ast-grep` | [`ast-grep/agent-skill`](https://github.com/ast-grep/agent-skill) |
+| `arxiv` | [`NousResearch/hermes-agent`](https://github.com/NousResearch/hermes-agent/tree/main/skills/research/arxiv) |
+| `wandb-primary` | [`wandb/skills`](https://github.com/wandb/skills) |
+| `improve` | [`shadcn/improve`](https://github.com/shadcn/improve) |
+| `write-better` | [`plannotator/write-better`](https://github.com/plannotator/write-better) |
 
-## Conventions
+The locally maintained `merge`, `ship`, `ruff`, and `sync-experiments` skills
+are installed separately and are not part of this repository.
 
-- `merge` and `ship` are token-frugal: trivial checks run inline, mechanical
-  subagents (test runs) use `haiku`, judgment subagents (diff review) use
-  `opus`, and all subagents return terse verdicts instead of full logs.
-- Install locally by symlinking a skill directory into `~/.claude/skills/`.
+## Install
+
+Symlink the desired top-level skill directory into `~/.agents/skills/`.
