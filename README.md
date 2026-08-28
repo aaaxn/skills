@@ -77,12 +77,16 @@ By the [Cursor](https://github.com/cursor) team.
 | [`thermo-nuclear-review`](./skills/thermo-nuclear-review/) | Security and correctness audit of a branch's changes | [`thermos`](https://github.com/cursor/plugins/tree/main/thermos) |
 | [`thermo-nuclear-code-quality-review`](./skills/thermo-nuclear-code-quality-review/) | Strict maintainability and abstraction review | [`thermos`](https://github.com/cursor/plugins/tree/main/thermos) |
 
-```bash
-npx skills@latest add cursor/plugins
-```
+That repository holds many plugins beyond these five, so install them one at a
+time.
 
-That repository holds many plugins beyond these five. To take only what is
-vendored here, add `--skill <name>` for each one.
+```bash
+npx skills@latest add cursor/plugins --skill unslop
+npx skills@latest add cursor/plugins --skill show-me-your-work
+npx skills@latest add cursor/plugins --skill thermos
+npx skills@latest add cursor/plugins --skill thermo-nuclear-review
+npx skills@latest add cursor/plugins --skill thermo-nuclear-code-quality-review
+```
 
 ## From individual authors
 
