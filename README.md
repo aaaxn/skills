@@ -20,16 +20,12 @@ Drop `--skill` to install every skill in a repository at once.
 | Skill | Purpose |
 | --- | --- |
 | [`deslop`](./skills/deslop/) | Remove AI-generated noise from a branch diff |
-| [`merge`](./skills/merge/) | Merge a PR with easy, adaptive, or full verification |
-| [`ship`](./skills/ship/) | Commit, push, and open a PR with easy, adaptive, or full verification |
 | [`ruff`](./skills/ruff/) | Reference for the [ruff](https://docs.astral.sh/ruff/) Python linter and formatter |
 | [`ty`](./skills/ty/) | Reference for the [ty](https://docs.astral.sh/ty/) Python type checker |
 | [`uv`](./skills/uv/) | Reference for the [uv](https://docs.astral.sh/uv/) Python package manager |
 
 ```bash
 npx skills@latest add aaaxn/skills --skill deslop
-npx skills@latest add aaaxn/skills --skill merge
-npx skills@latest add aaaxn/skills --skill ship
 npx skills@latest add aaaxn/skills --skill ruff
 npx skills@latest add aaaxn/skills --skill ty
 npx skills@latest add aaaxn/skills --skill uv
