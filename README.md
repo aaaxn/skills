@@ -9,10 +9,11 @@ link to its upstream source and the command that installs it.
 Install commands use the [skills.sh](https://www.skills.sh/) CLI:
 
 ```bash
-npx skills@latest add <owner>/<repo> --skill <name>
+npx skills@latest add <owner>/<repo>
 ```
 
-Drop `--skill` to install every skill in a repository at once.
+Each command installs every skill in that repository. Add
+`--skill <name>` to install just one.
 
 ## From [`mattpocock/skills`](https://github.com/mattpocock/skills)
 
@@ -57,39 +58,7 @@ By [Matt Pocock](https://github.com/mattpocock). Browse them on
 | [`writing-shape`](./skills/writing-shape/) | Shape raw material into an article, paragraph by paragraph |
 
 ```bash
-npx skills@latest add mattpocock/skills --skill ask-matt
-npx skills@latest add mattpocock/skills --skill claude-handoff
-npx skills@latest add mattpocock/skills --skill code-review
-npx skills@latest add mattpocock/skills --skill codebase-design
-npx skills@latest add mattpocock/skills --skill diagnosing-bugs
-npx skills@latest add mattpocock/skills --skill domain-modeling
-npx skills@latest add mattpocock/skills --skill edit-article
-npx skills@latest add mattpocock/skills --skill git-guardrails-claude-code
-npx skills@latest add mattpocock/skills --skill grill-me
-npx skills@latest add mattpocock/skills --skill grill-with-docs
-npx skills@latest add mattpocock/skills --skill grilling
-npx skills@latest add mattpocock/skills --skill handoff
-npx skills@latest add mattpocock/skills --skill implement
-npx skills@latest add mattpocock/skills --skill improve-codebase-architecture
-npx skills@latest add mattpocock/skills --skill loop-me
-npx skills@latest add mattpocock/skills --skill migrate-to-shoehorn
-npx skills@latest add mattpocock/skills --skill prototype
-npx skills@latest add mattpocock/skills --skill research
-npx skills@latest add mattpocock/skills --skill resolving-merge-conflicts
-npx skills@latest add mattpocock/skills --skill scaffold-exercises
-npx skills@latest add mattpocock/skills --skill setup-matt-pocock-skills
-npx skills@latest add mattpocock/skills --skill setup-pre-commit
-npx skills@latest add mattpocock/skills --skill tdd
-npx skills@latest add mattpocock/skills --skill teach
-npx skills@latest add mattpocock/skills --skill to-spec
-npx skills@latest add mattpocock/skills --skill to-tickets
-npx skills@latest add mattpocock/skills --skill triage
-npx skills@latest add mattpocock/skills --skill wayfinder
-npx skills@latest add mattpocock/skills --skill wizard
-npx skills@latest add mattpocock/skills --skill writing-beats
-npx skills@latest add mattpocock/skills --skill writing-for-agents
-npx skills@latest add mattpocock/skills --skill writing-fragments
-npx skills@latest add mattpocock/skills --skill writing-shape
+npx skills@latest add mattpocock/skills
 ```
 
 `edit-article` has since been removed upstream; it is kept here from an earlier
@@ -109,12 +78,11 @@ By the [Cursor](https://github.com/cursor) team.
 | [`thermo-nuclear-code-quality-review`](./skills/thermo-nuclear-code-quality-review/) | Strict maintainability and abstraction review | [`thermos`](https://github.com/cursor/plugins/tree/main/thermos) |
 
 ```bash
-npx skills@latest add cursor/plugins --skill unslop
-npx skills@latest add cursor/plugins --skill show-me-your-work
-npx skills@latest add cursor/plugins --skill thermos
-npx skills@latest add cursor/plugins --skill thermo-nuclear-review
-npx skills@latest add cursor/plugins --skill thermo-nuclear-code-quality-review
+npx skills@latest add cursor/plugins
 ```
+
+That repository holds many plugins beyond these five. To take only what is
+vendored here, add `--skill <name>` for each one.
 
 ## From individual authors
 
@@ -134,16 +102,14 @@ npx skills@latest add cursor/plugins --skill thermo-nuclear-code-quality-review
 | [`write-better`](./skills/write-better/) | Improve, rewrite, and review prose | [Plannotator](https://github.com/plannotator) | [`plannotator/write-better`](https://github.com/plannotator/write-better/tree/main/skills/write-better) |
 
 ```bash
-npx skills@latest add NousResearch/hermes-agent --skill arxiv
-npx skills@latest add dmmulroy/skills --skill bro
-npx skills@latest add anthropics/skills --skill frontend-design
-npx skills@latest add humanlayer/skills --skill improve-claude-md
-npx skills@latest add lukeberrypi/skills --skill prune-dead-code
-npx skills@latest add lukeberrypi/skills --skill remove-dumb-comments
-npx skills@latest add humanlayer/skills --skill show-me
-npx skills@latest add hardikpandya/stop-slop --skill stop-slop
-npx skills@latest add wandb/skills --skill wandb-primary
-npx skills@latest add plannotator/write-better --skill write-better
+npx skills@latest add NousResearch/hermes-agent
+npx skills@latest add dmmulroy/skills
+npx skills@latest add anthropics/skills
+npx skills@latest add humanlayer/skills
+npx skills@latest add lukeberrypi/skills
+npx skills@latest add hardikpandya/stop-slop
+npx skills@latest add wandb/skills
+npx skills@latest add plannotator/write-better
 ```
 
 `code-like-luke` and `guided-review` come from gists rather than repositories,
