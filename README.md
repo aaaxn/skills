@@ -96,12 +96,3 @@ By the [Cursor](https://github.com/cursor) team.
 
 The old SONIC SLURM skills remain under [`depreceted/`](./depreceted/) for
 historical reference.
-
-## Installed separately
-
-These are used locally but are not part of this repository.
-
-| Skill | Source |
-| --- | --- |
-| `paper-writing` | [`SNL-UCSB/paper-writing-skill`](https://github.com/SNL-UCSB/paper-writing-skill) |
-| `sync-experiments` | Local, unpublished |
