@@ -1,2 +1,5 @@
 # Kept locally, not published to this repository.
 paper-writing/
+
+__pycache__/
+*.pyc
