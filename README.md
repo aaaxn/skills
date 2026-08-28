@@ -106,14 +106,16 @@ npx skills@latest add cursor/plugins --skill thermo-nuclear-code-quality-review
 | [`write-better`](./skills/write-better/) | Improve, rewrite, and review prose | [Plannotator](https://github.com/plannotator) | [`plannotator/write-better`](https://github.com/plannotator/write-better/tree/main/skills/write-better) |
 
 ```bash
-npx skills@latest add NousResearch/hermes-agent
-npx skills@latest add dmmulroy/skills
-npx skills@latest add anthropics/skills
-npx skills@latest add humanlayer/skills
-npx skills@latest add lukeberrypi/skills
-npx skills@latest add hardikpandya/stop-slop
-npx skills@latest add wandb/skills
-npx skills@latest add plannotator/write-better
+npx skills@latest add NousResearch/hermes-agent --skill arxiv
+npx skills@latest add dmmulroy/skills --skill bro
+npx skills@latest add anthropics/skills --skill frontend-design
+npx skills@latest add humanlayer/skills --skill improve-claude-md
+npx skills@latest add lukeberrypi/skills --skill prune-dead-code
+npx skills@latest add lukeberrypi/skills --skill remove-dumb-comments
+npx skills@latest add humanlayer/skills --skill show-me
+npx skills@latest add hardikpandya/stop-slop --skill stop-slop
+npx skills@latest add wandb/skills --skill wandb-primary
+npx skills@latest add plannotator/write-better --skill write-better
 ```
 
 `code-like-luke` and `guided-review` come from gists rather than repositories,
