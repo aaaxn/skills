@@ -4,8 +4,7 @@ Personal agent skills. Every skill lives under [`skills/`](./skills/) so the
 repository root stays readable.
 
 Most of these were written by other people. Each one is credited below with a
-link to its upstream source and the command that installs it. Only the skills
-under [Maintained here](#maintained-here) are original to this repository.
+link to its upstream source and the command that installs it.
 
 Install commands use the [skills.sh](https://www.skills.sh/) CLI:
 
@@ -14,22 +13,6 @@ npx skills@latest add <owner>/<repo> --skill <name>
 ```
 
 Drop `--skill` to install every skill in a repository at once.
-
-## Maintained here
-
-| Skill | Purpose |
-| --- | --- |
-| [`deslop`](./skills/deslop/) | Remove AI-generated noise from a branch diff |
-| [`ruff`](./skills/ruff/) | Reference for the [ruff](https://docs.astral.sh/ruff/) Python linter and formatter |
-| [`ty`](./skills/ty/) | Reference for the [ty](https://docs.astral.sh/ty/) Python type checker |
-| [`uv`](./skills/uv/) | Reference for the [uv](https://docs.astral.sh/uv/) Python package manager |
-
-```bash
-npx skills@latest add aaaxn/skills --skill deslop
-npx skills@latest add aaaxn/skills --skill ruff
-npx skills@latest add aaaxn/skills --skill ty
-npx skills@latest add aaaxn/skills --skill uv
-```
 
 ## From [`mattpocock/skills`](https://github.com/mattpocock/skills)
 
