@@ -28,7 +28,6 @@ By [Matt Pocock](https://github.com/mattpocock). Browse them on
 | [`codebase-design`](./skills/codebase-design/) | Shared vocabulary for designing deep modules |
 | [`diagnosing-bugs`](./skills/diagnosing-bugs/) | Diagnosis loop for hard bugs and performance regressions |
 | [`domain-modeling`](./skills/domain-modeling/) | Build and sharpen a project's domain model |
-| [`edit-article`](./skills/edit-article/) | Restructure and tighten an article draft |
 | [`git-guardrails-claude-code`](./skills/git-guardrails-claude-code/) | Hooks that block dangerous git commands |
 | [`grill-me`](./skills/grill-me/) | A relentless interview to sharpen a plan or design |
 | [`grill-with-docs`](./skills/grill-with-docs/) | The same interview, producing ADRs and a glossary as it goes |
@@ -61,9 +60,8 @@ By [Matt Pocock](https://github.com/mattpocock). Browse them on
 npx skills@latest add mattpocock/skills
 ```
 
-`edit-article` has since been removed upstream; it is kept here from an earlier
-revision of that repository. `writing-great-skills` is a local compatibility
-alias for `writing-for-agents` and has no upstream command of its own.
+`writing-great-skills` is a local compatibility alias for `writing-for-agents`
+and has no upstream command of its own.
 
 ## From [`cursor/plugins`](https://github.com/cursor/plugins)
 
