@@ -1,7 +1,7 @@
 # skills
 
-Personal agent skills. Every skill lives under [`skills/`](./skills/) so the
-repository root stays readable.
+Personal agent skills. Every skill lives under [`skills/`](./skills/), so the
+repository root holds nothing but this README and the collection.
 
 Most of these were written by other people. Each one is credited below with a
 link to its upstream source and the command that installs it.
@@ -120,8 +120,3 @@ npx skills@latest add plannotator/write-better --skill write-better
 
 `code-like-luke` and `guided-review` come from gists rather than repositories,
 so they have no `skills add` command. Copy them into `skills/` by hand.
-
-## Deprecated
-
-The old SONIC SLURM skills remain under [`depreceted/`](./depreceted/) for
-historical reference.
